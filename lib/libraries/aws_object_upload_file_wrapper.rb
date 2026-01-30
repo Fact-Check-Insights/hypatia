@@ -10,7 +10,8 @@ class AwsObjectUploadFileWrapper
     object_key = object_key_for_file_path(file_path)
     @file_path = file_path
 
-    @object = Aws::S3::Object.new(bucket_name, object_key)
+    s3_client = Aws::S3::Client.new(region: Figaro.env.AWS_REGION, endpoint: Figaro.env.S3_ENDPOINT)
+    @object = Aws::S3::Object.new(bucket_name, object_key, client: s3_client)
   end
 
   # Uploads a file to an Amazon S3 object by using a managed uploader.
