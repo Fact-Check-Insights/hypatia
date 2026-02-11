@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.1.6"
+ruby "3.2.7"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem "rails", "~> 7.2"
@@ -76,17 +76,17 @@ gem "selenium-webdriver", ">= 4.32.0"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # The whole point of this app
-gem "zorki", git: "https://github.com/TechAndCheck/zorki"
+gem "zorki", git: "https://github.com/Fact-Check-Insights/zorki"
 # gem "zorki", path: "/Users/christopher/Repositories/zorki"
-gem "forki", git: "https://github.com/TechAndCheck/forki", branch: "main"
+gem "forki", git: "https://github.com/Fact-Check-Insights/forki", branch: "main"
 # gem "forki", "0.2.9", path: "/Users/christopher/Repositories/Reporters_Lab/forki"
-gem "youtubearchiver", git: "https://github.com/TechAndCheck/YoutubeArchiver"
+gem "youtubearchiver", git: "https://github.com/Fact-Check-Insights/YoutubeArchiver"
 # gem "birdsong", path: "/Users/christopher/Repositories/birdsong"
 # gem "birdsong", "0.2.7", git: "https://github.com/cguess/birdsong", branch: "selenium-upgrade"
-gem "birdsong", git: "https://github.com/cguess/birdsong", branch: "master"
+gem "birdsong", git: "https://github.com/Fact-Check-Insights/birdsong", branch: "master"
 # gem "mosquito-scrape", git: "https://github.com/TechAndCheck/mosquito", branch: "main", require: "mosquito"
 # gem "mosquito-scrape", path: "/Users/christopher/Repositories/mosquito", require: "mosquito"
-gem "morris", git: "https://github.com/techandcheck/morris", branch: "main"
+gem "morris", git: "https://github.com/Fact-Check-Insights/morris", branch: "main"
 # gem "morris", path: "/Users/christopher/Repositories/Reporters_Lab/morris"
 
 # Run shell commands (yt-dlp)
