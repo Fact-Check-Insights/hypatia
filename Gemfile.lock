@@ -23,7 +23,7 @@ GIT
 
 GIT
   remote: https://github.com/Fact-Check-Insights/forki
-  revision: 82b64234af58659038ae389941de4301a4383501
+  revision: bf09f9288267b1780c448face9313281faedb596
   branch: main
   specs:
     forki (0.2.40)
