@@ -51,7 +51,7 @@ GIT
 
 GIT
   remote: https://github.com/Fact-Check-Insights/zorki
-  revision: 315f3fdf99ab58c39d998a754b585898ce5397d0
+  revision: 02f100dd6d47693c1b4e1449b1c64c6f005d228d
   specs:
     zorki (0.2.11)
       apparition
