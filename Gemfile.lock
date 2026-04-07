@@ -23,7 +23,7 @@ GIT
 
 GIT
   remote: https://github.com/Fact-Check-Insights/forki
-  revision: bc393e3779620ae3d9742c3119e43c91873c57d5
+  revision: a26139aad7363f483fd29d43a44ccdadc6476edd
   branch: main
   specs:
     forki (0.2.40)
@@ -137,7 +137,7 @@ GEM
       minitest (>= 5.1)
       securerandom (>= 0.3)
       tzinfo (~> 2.0, >= 2.0.5)
-    addressable (2.8.8)
+    addressable (2.9.0)
       public_suffix (>= 2.0.2, < 8.0)
     apparition (0.6.0)
       capybara (~> 3.13, < 4)
@@ -164,7 +164,7 @@ GEM
       aws-eventstream (~> 1, >= 1.0.2)
     base64 (0.3.0)
     benchmark (0.5.0)
-    bigdecimal (4.0.1)
+    bigdecimal (4.1.1)
     bindex (0.8.1)
     blueprinter (1.2.1)
     bootsnap (1.22.0)
@@ -218,9 +218,9 @@ GEM
       multipart-post (~> 2.0)
     faraday-net_http (3.4.2)
       net-http (~> 0.5)
-    ffi (1.17.3-arm64-darwin)
-    ffi (1.17.3-x86_64-darwin)
-    ffi (1.17.3-x86_64-linux-gnu)
+    ffi (1.17.4-arm64-darwin)
+    ffi (1.17.4-x86_64-darwin)
+    ffi (1.17.4-x86_64-linux-gnu)
     figaro (1.3.0)
       thor (>= 0.14.0, < 2)
     gli (2.22.2)
@@ -287,14 +287,14 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     nio4r (2.7.5)
-    nokogiri (1.19.0-arm64-darwin)
+    nokogiri (1.19.2-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.19.0-x86_64-darwin)
+    nokogiri (1.19.2-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.19.0-x86_64-linux-gnu)
+    nokogiri (1.19.2-x86_64-linux-gnu)
       racc (~> 1.4)
     oauth (0.5.14)
-    oj (3.16.15)
+    oj (3.16.16)
       bigdecimal (>= 3.0)
       ostruct (>= 0.2)
     ostruct (0.6.3)
@@ -318,11 +318,11 @@ GEM
     psych (5.3.1)
       date
       stringio
-    public_suffix (7.0.2)
+    public_suffix (7.0.5)
     puma (5.6.9)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (2.2.21)
+    rack (2.2.23)
     rack-mini-profiler (2.3.4)
       rack (>= 1.2.0)
     rack-session (1.0.2)
@@ -380,7 +380,7 @@ GEM
       psych (>= 4.0.0)
       tsort
     redis (4.8.1)
-    regexp_parser (2.11.3)
+    regexp_parser (2.12.0)
     reline (0.6.3)
       io-console (~> 0.5)
     rexml (3.4.4)
@@ -448,7 +448,7 @@ GEM
       sprockets-rails
       tilt
     securerandom (0.4.1)
-    selenium-devtools (0.143.0)
+    selenium-devtools (0.145.0)
       selenium-webdriver (~> 4.2)
     selenium-webdriver (4.40.0)
       base64 (~> 0.2)
@@ -593,4 +593,4 @@ RUBY VERSION
    ruby 3.3.6p108
 
 BUNDLED WITH
-   2.4.19
+   2.5.22
