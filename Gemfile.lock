@@ -23,7 +23,7 @@ GIT
 
 GIT
   remote: https://github.com/Fact-Check-Insights/forki
-  revision: 2df0a7e9c4b54c0053b6ebc7f10b03addbf4fe9f
+  revision: dd95c24009e88d7679b25b403effd9be711d975c
   branch: main
   specs:
     forki (0.2.40)
@@ -448,7 +448,7 @@ GEM
       sprockets-rails
       tilt
     securerandom (0.4.1)
-    selenium-devtools (0.146.0)
+    selenium-devtools (0.147.0)
       selenium-webdriver (~> 4.2)
     selenium-webdriver (4.40.0)
       base64 (~> 0.2)
