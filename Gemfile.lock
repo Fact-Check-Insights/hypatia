@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/Fact-Check-Insights/birdsong
-  revision: 0cc5a4363826e879b66bdbcbffcea46b6a59c299
+  revision: 53c9877ab9313a60989c1d42c163a2b6fd9b96ca
   branch: master
   specs:
     birdsong (0.2.16)
@@ -22,7 +22,7 @@ GIT
 
 GIT
   remote: https://github.com/Fact-Check-Insights/forki
-  revision: bb75d13357b5c3169aca3c6550785c7668e7c1ac
+  revision: 1eaec878e1ab3cdc3850143b1f81ebd337cb6fef
   branch: main
   specs:
     forki (0.2.40)
@@ -454,7 +454,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 4.0)
       websocket (~> 1.0)
-    semantic_logger (4.17.0)
+    semantic_logger (4.18.0)
       concurrent-ruby (~> 1.0)
     set (1.1.2)
     sidekiq (6.5.7)
