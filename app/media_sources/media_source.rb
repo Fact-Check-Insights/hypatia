@@ -58,21 +58,28 @@ class MediaSource
     session = Capybara::Session.new(:hypatia)
     screenshot_path = nil
 
-    session.using_wait_time(10) do
-      session.driver.browser.navigate.to(url)
+    begin
+      session.using_wait_time(10) do
+        session.driver.browser.navigate.to(url)
 
+        begin
+          unless indicator_element_id.nil?
+            session.find_by_id(indicator_element_id, wait: wait_time) # Block until page content loads
+          else
+            sleep(wait_time)
+          end
+        rescue Capybara::ElementNotFound; end
+
+        media_source_name = self.to_s.delete_suffix("MediaSource").downcase
+        save_path = File.join(Rails.root, "tmp", "#{media_source_name}_screenshot_#{SecureRandom.uuid}.png")
+        screenshot_path = session.save_screenshot(save_path)
+      end
+    ensure
       begin
-        unless indicator_element_id.nil?
-          session.find_by_id(indicator_element_id, wait: wait_time) # Block until page content loads
-        else
-          sleep(wait_time)
-        end
-      rescue Capybara::ElementNotFound; end
-
-      media_source_name = self.to_s.delete_suffix("MediaSource").downcase
-      save_path = File.join(Rails.root, "tmp", "#{media_source_name}_screenshot_#{SecureRandom.uuid}.png")
-      screenshot_path = session.save_screenshot(save_path)
-      session.quit
+        session.quit
+      rescue StandardError => e
+        @@logger.warn("Error quitting screenshot session: #{e}")
+      end
     end
 
     screenshot_path
