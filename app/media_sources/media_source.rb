@@ -133,6 +133,8 @@ class MediaSource
   # @param url A user objects constructed by one of the scraper gems
   # @return nil
   def self.create_aws_key_functions_for_users(user)
+    return if user.nil?
+
     user.instance_variable_set("@aws_profile_image_key", nil)
 
     user.define_singleton_method(:aws_profile_image_key) do
