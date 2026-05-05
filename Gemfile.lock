@@ -22,7 +22,7 @@ GIT
 
 GIT
   remote: https://github.com/Fact-Check-Insights/forki
-  revision: 1eaec878e1ab3cdc3850143b1f81ebd337cb6fef
+  revision: 2fc844a1aaf8e2a92a2f3cf92805384e4e76d45c
   branch: main
   specs:
     forki (0.2.40)
@@ -162,7 +162,7 @@ GEM
       aws-eventstream (~> 1, >= 1.0.2)
     base64 (0.3.0)
     benchmark (0.5.0)
-    bigdecimal (4.1.1)
+    bigdecimal (4.1.2)
     bindex (0.8.1)
     blueprinter (1.2.1)
     bootsnap (1.22.0)
@@ -285,14 +285,14 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     nio4r (2.7.5)
-    nokogiri (1.19.2-arm64-darwin)
+    nokogiri (1.19.3-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.19.2-x86_64-darwin)
+    nokogiri (1.19.3-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.19.2-x86_64-linux-gnu)
+    nokogiri (1.19.3-x86_64-linux-gnu)
       racc (~> 1.4)
     oauth (0.5.14)
-    oj (3.16.17)
+    oj (3.17.0)
       bigdecimal (>= 3.0)
       ostruct (>= 0.2)
     ostruct (0.6.3)
@@ -434,7 +434,7 @@ GEM
       byebug (>= 11.1.0)
       pastel (>= 0.7.4)
       pry (>= 0.13.0)
-    rubyzip (3.2.2)
+    rubyzip (3.3.0)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
