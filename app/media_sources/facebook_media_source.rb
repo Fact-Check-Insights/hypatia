@@ -34,6 +34,15 @@ class FacebookMediaSource < MediaSource
     @@logger.error message
     self.send_message_to_slack(message)
     raise e
+  rescue Forki::PostExtractionError => e
+    # The post loaded but Forki couldn't parse it — this is NOT a removed post.
+    # It usually means Facebook changed its page layout (or hit a post shape
+    # Forki doesn't handle yet), so flag it for investigation instead of
+    # reporting it as unavailable.
+    message = "Facebook post #{scrape.url} could not be parsed (#{e.message}) — likely a Facebook layout change, not a removed post"
+    @@logger.error message
+    self.send_message_to_slack(message)
+    raise e
   end
 
   # Validate that the url is a direct link to a post, poorly

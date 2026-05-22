@@ -22,7 +22,7 @@ GIT
 
 GIT
   remote: https://github.com/Fact-Check-Insights/forki
-  revision: 2fc844a1aaf8e2a92a2f3cf92805384e4e76d45c
+  revision: 6ec14d3bf367d44edbfd38ede0918176425d44d3
   branch: main
   specs:
     forki (0.2.40)
@@ -292,7 +292,7 @@ GEM
     nokogiri (1.19.3-x86_64-linux-gnu)
       racc (~> 1.4)
     oauth (0.5.14)
-    oj (3.17.0)
+    oj (3.17.1)
       bigdecimal (>= 3.0)
       ostruct (>= 0.2)
     ostruct (0.6.3)

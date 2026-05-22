@@ -77,6 +77,16 @@ class ScrapeJob < ApplicationJob
     logger.info "\nPost removed at: #{url}\n"
 
     Honeybadger.notify(e, context: { url: url, status: "removed" })
+  rescue Forki::PostExtractionError => e
+    # Forki reached the post but couldn't extract its data. This is NOT a
+    # removed post — it usually signals a Facebook layout change or a post
+    # shape Forki doesn't handle yet. Report it as an error (302) so it gets
+    # investigated, instead of silently marking the post as removed (303).
+    CommsManager.send_scrape_status_update(ENV["VM_NAME"], 302, { url: url, scrape_id: callback_id })
+
+    logger.error "\nPost extraction failed at: #{url} — #{e.message}\n"
+
+    Honeybadger.notify(e, context: { url: url, status: "parse_error" })
   rescue MediaSource::HostError => e
     # This means the content can't be scraped, which is not good. However, we don't want to keep retrying
     # so we send an error back to Zenodotus
