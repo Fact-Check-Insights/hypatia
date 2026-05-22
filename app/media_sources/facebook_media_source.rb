@@ -80,11 +80,20 @@ class FacebookMediaSource < MediaSource
       @@logger.debug "Beginning uploading of files to S3 bucket #{Figaro.env.AWS_S3_BUCKET_NAME}"
 
       # Upload user profile picture to s3
-      if post.user.profile_image_file.present?
-        @@logger.debug "Uploading user profile picture #{post.user.profile_image_file}"
-        aws_upload_wrapper = AwsObjectUploadFileWrapper.new(post.user.profile_image_file)
-        aws_upload_wrapper.upload_file
-        post.user.instance_variable_set("@aws_profile_image_key", aws_upload_wrapper.object.key)
+      #
+      # Forki occasionally returns a post without an associated user (post.user is nil)
+      # when it can't resolve the poster's profile. This doesn't happen for every post,
+      # so we only fall back to the alternative path when calling into the user actually
+      # raises: skip the profile picture upload and carry on with the rest of the media.
+      begin
+        if post.user.profile_image_file.present?
+          @@logger.debug "Uploading user profile picture #{post.user.profile_image_file}"
+          aws_upload_wrapper = AwsObjectUploadFileWrapper.new(post.user.profile_image_file)
+          aws_upload_wrapper.upload_file
+          post.user.instance_variable_set("@aws_profile_image_key", aws_upload_wrapper.object.key)
+        end
+      rescue NoMethodError => e
+        @@logger.warn "Skipping profile picture upload, post has no associated user: #{e.message}"
       end
 
       # Upload post screenshot to s3
