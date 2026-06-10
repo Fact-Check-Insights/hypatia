@@ -1,0 +1,22 @@
+name: Ruby
+
+on: [push,pull_request]
+
+
+jobs:
+  build:
+    environment: CI
+    runs-on: ubuntu-latest
+    env:
+      TWITTER_BEARER_TOKEN: '${{ secrets.TWITTER_BEARER_TOKEN }}'
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.1.2
+    - name: Run the default task
+      run: |
+        gem install bundler -v 2.2.14
+        bundle install
+        bundle exec rake

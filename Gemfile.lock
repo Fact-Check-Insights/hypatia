@@ -7,20 +7,6 @@ GIT
       typhoeus (~> 1.4)
 
 GIT
-  remote: https://github.com/Fact-Check-Insights/birdsong
-  revision: 53c9877ab9313a60989c1d42c163a2b6fd9b96ca
-  branch: master
-  specs:
-    birdsong (0.2.16)
-      capybara (~> 3.40)
-      curb (~> 1.0, >= 1.0.5)
-      oauth (~> 0.5.6)
-      oj (~> 3.16, >= 3.16.3)
-      rotp
-      selenium-webdriver (~> 4.40, >= 4.40.0)
-      typhoeus (~> 1.4.0)
-
-GIT
   remote: https://github.com/Fact-Check-Insights/forki
   revision: 6ec14d3bf367d44edbfd38ede0918176425d44d3
   branch: main
@@ -58,6 +44,18 @@ GIT
       oj
       selenium-webdriver (~> 4.40.0)
       typhoeus
+
+PATH
+  remote: vendor/birdsong
+  specs:
+    birdsong (0.3.0)
+      capybara (~> 3.40)
+      curb (~> 1.0, >= 1.0.5)
+      oauth (~> 0.5.6)
+      oj (~> 3.16, >= 3.16.3)
+      rotp
+      selenium-webdriver (~> 4.40, >= 4.40.0)
+      typhoeus (~> 1.4.0)
 
 GEM
   remote: https://rubygems.org/
