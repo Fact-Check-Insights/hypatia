@@ -90,6 +90,8 @@ class AntenaClientTest < Minitest::Test
     assert_equal 190_525, tweet.author.tweet_count
     # Nil avatar should fall back gracefully, and url defaults from the username.
     assert_nil tweet.author.profile_image_url
+    # nil (not "") so blueprints that guard on nil skip File.open.
+    assert_nil tweet.author.profile_image_file_name
     assert_equal "https://www.x.com/ThobaneMazibuko", tweet.author.url
 
     assert_empty tweet.images

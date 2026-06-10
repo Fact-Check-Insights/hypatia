@@ -15,7 +15,7 @@ class TwitterUserBlueprint < Blueprinter::Base
 
   field :profile_image do |user|
     to_return = nil
-    if user.profile_image_file_name.nil? == false && user.aws_profile_image_key.blank?
+    if user.profile_image_file_name.present? && user.aws_profile_image_key.blank?
       File.open(user.profile_image_file_name) { |file| to_return = Base64.encode64(file.read) }
     end
 

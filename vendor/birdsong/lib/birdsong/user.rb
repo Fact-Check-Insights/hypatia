@@ -49,7 +49,8 @@ module Birdsong
       @tweet_count = user_object[:tweet_count]
       @listed_count = user_object[:listed_count]
       @verified = user_object[:verified] # this will always be `false` but we're keeping it here for compatibility
-      @profile_image_file_name = @profile_image_url ? Birdsong.retrieve_media(@profile_image_url) : ""
+      # nil (not "") when there's no avatar: consumers guard on nil to mean "no image".
+      @profile_image_file_name = @profile_image_url ? Birdsong.retrieve_media(@profile_image_url) : nil
     end
   end
 end

@@ -50,7 +50,7 @@ class TwitterPostBlueprint < Blueprinter::Base
 
   # This isn't used anymore I believe
   field :screenshot_file do |tweet|
-    if tweet.aws_screenshot_key.blank?
+    if tweet.screenshot_file.present? && tweet.aws_screenshot_key.blank?
       base64_temp = nil
       File.open(tweet.screenshot_file) { |file| base64_temp = Base64.encode64(file.read) }
       base64_temp
