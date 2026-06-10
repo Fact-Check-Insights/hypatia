@@ -22,6 +22,17 @@ class TwitterSourceTest < ActiveSupport::TestCase
     end
   end
 
+  def test_extract_tweet_id_ignores_photo_video_and_query_suffixes
+    {
+      "https://x.com/flyunitedng/status/2039294097463099457/photo/1" => "2039294097463099457",
+      "https://x.com/world_upd/status/2062352285456568575/video/1"  => "2062352285456568575",
+      "https://x.com/i/status/2064037313848463444"                  => "2064037313848463444",
+      "https://x.com/taslimanasreen/status/1854211323053351028?s=19" => "1854211323053351028"
+    }.each do |url, expected_id|
+      assert_equal expected_id, TwitterMediaSource.send(:extract_tweet_id_from_url, url)
+    end
+  end
+
   def test_initializing_returns_blank
     assert_raises(Birdsong::NoTweetFoundError) do
       TwitterMediaSource.extract(Scrape.create({ url: "https://twitter.com/jack/status/1" }))

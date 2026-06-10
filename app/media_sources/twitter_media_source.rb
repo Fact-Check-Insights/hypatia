@@ -149,11 +149,13 @@ private
   # @params url [String] a url to extract an id from
   # @return [String] the id from the url or [Nil]
   def self.extract_tweet_id_from_url(url)
-    uri = URI(url)
-    splits = uri.path.split("/")
-    raise TwitterMediaSource::InvalidTweetUrlError if splits.empty?
+    # Tweet urls can carry trailing segments like /photo/1 or /video/1 (and query
+    # strings), so we can't just take the last path component. Grab the numeric id
+    # that immediately follows /status/.
+    match = url.match(%r{/status/(\d+)})
+    raise TwitterMediaSource::InvalidTweetUrlError if match.nil?
 
-    splits.last
+    match[1]
   end
 end
 
