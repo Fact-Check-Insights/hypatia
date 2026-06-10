@@ -31,7 +31,9 @@ module Birdsong
       @id = user_object[:id]
       @name = user_object[:name]
       @username = user_object[:username]
-      @created_at = DateTime.parse(user_object[:sign_up_date])
+      # Antena may not return an account creation date, so guard against a nil/blank value.
+      sign_up_date = user_object[:sign_up_date]
+      @created_at = sign_up_date.nil? || sign_up_date.empty? ? nil : DateTime.parse(sign_up_date)
       @location = user_object[:location]
 
       # Removing the "normal" here gets us the full-sized image, instead of the 150x150 thumbnail.

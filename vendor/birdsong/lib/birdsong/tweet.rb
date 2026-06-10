@@ -44,7 +44,9 @@ module Birdsong
 
     def initialize(tweet_object)
       @id = tweet_object[:id]
-      @created_at = DateTime.parse(tweet_object[:date])
+      # Guard against a missing date so a nil never blows up parsing.
+      date = tweet_object[:date]
+      @created_at = date.nil? || date.empty? ? nil : DateTime.parse(date)
       @text = tweet_object[:text]
       @language = tweet_object[:language]
       @author_id = tweet_object[:user][:id]

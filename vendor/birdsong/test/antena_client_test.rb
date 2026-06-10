@@ -99,6 +99,16 @@ class AntenaClientTest < Minitest::Test
     assert_nil tweet.video_file_type
   end
 
+  def test_author_without_account_created_at_does_not_raise
+    result = sample_result
+    result[:author][:account_created_at] = nil
+    stub_job(status: "done", result: result)
+
+    tweet = Birdsong::Tweet.lookup(TWEET_ID).first
+    assert_instance_of Birdsong::Tweet, tweet
+    assert_nil tweet.author.created_at
+  end
+
   def test_failed_job_raises_no_tweet_found
     stub_job(status: "failed")
 
