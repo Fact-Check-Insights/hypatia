@@ -141,4 +141,17 @@ class AntenaClientTest < Minitest::Test
     post = Morris::Post.lookup(URL).first
     assert_instance_of Morris::Post, post
   end
+
+  # `profile` and `profile_image_url` are NOT NULL downstream; Antena sends null when absent.
+  def test_null_bio_and_avatar_are_coerced_to_empty_string
+    result = sample_result
+    result[:author][:description] = nil
+    result[:author][:avatar_url] = nil
+    stub_job(status: "done", result: result)
+
+    post = Morris::Post.lookup(URL).first
+    assert_equal "", post.user[:profile]
+    assert_equal "", post.user[:profile_image_url]
+    assert_nil post.user[:profile_image]
+  end
 end

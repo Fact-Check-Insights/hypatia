@@ -94,10 +94,12 @@ module Morris
         number_of_followers: author["followers_count"],
         number_of_following: author["following_count"],
         verified: author["is_verified"],
-        profile: author["description"],
+        # `profile` and `profile_image_url` are NOT NULL downstream, but Antena returns null
+        # when a user has no bio/avatar (the browser scraper returned ""), so coerce to "".
+        profile: author["description"].to_s,
         profile_link: author["handle"] ? "https://www.tiktok.com/@#{author['handle']}" : nil,
         profile_image: download(author["avatar_url"]),
-        profile_image_url: author["avatar_url"]
+        profile_image_url: author["avatar_url"].to_s
       }
 
       {
