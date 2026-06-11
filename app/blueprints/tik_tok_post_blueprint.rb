@@ -33,7 +33,7 @@ class TikTokPostBlueprint < Blueprinter::Base
 
   field :screenshot_file do |post|
     to_return = nil
-    if post.aws_screenshot_key.blank?
+    if post.screenshot_file.present? && post.aws_screenshot_key.blank?
       File.open(post.screenshot_file) { |file| to_return = Base64.encode64(file.read) }
     end
 

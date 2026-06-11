@@ -86,8 +86,8 @@ gem "youtubearchiver", git: "https://github.com/Fact-Check-Insights/YoutubeArchi
 gem "birdsong", path: "vendor/birdsong"
 # gem "mosquito-scrape", git: "https://github.com/TechAndCheck/mosquito", branch: "main", require: "mosquito"
 # gem "mosquito-scrape", path: "/Users/christopher/Repositories/mosquito", require: "mosquito"
-gem "morris", git: "https://github.com/Fact-Check-Insights/morris", branch: "main"
-# gem "morris", path: "/Users/christopher/Repositories/Reporters_Lab/morris"
+# gem "morris", git: "https://github.com/Fact-Check-Insights/morris", branch: "main"
+gem "morris", path: "vendor/morris"
 
 # Run shell commands (yt-dlp)
 gem "terrapin"

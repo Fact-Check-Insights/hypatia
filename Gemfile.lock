@@ -21,20 +21,6 @@ GIT
       zorki
 
 GIT
-  remote: https://github.com/Fact-Check-Insights/morris
-  revision: 1aca6564758796a6237bc0052fa92c5353eab788
-  branch: main
-  specs:
-    morris (0.1.3)
-      apparition
-      capybara
-      oj
-      selenium-devtools
-      selenium-webdriver
-      terrapin
-      typhoeus
-
-GIT
   remote: https://github.com/Fact-Check-Insights/zorki
   revision: 61e07ca7fcc8486b22424d54cb4199ba6db50f02
   specs:
@@ -56,6 +42,18 @@ PATH
       rotp
       selenium-webdriver (~> 4.40, >= 4.40.0)
       typhoeus (~> 1.4.0)
+
+PATH
+  remote: vendor/morris
+  specs:
+    morris (0.2.0)
+      apparition
+      capybara
+      oj
+      selenium-devtools
+      selenium-webdriver
+      terrapin
+      typhoeus
 
 GEM
   remote: https://rubygems.org/
