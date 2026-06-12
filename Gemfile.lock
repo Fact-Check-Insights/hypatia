@@ -20,17 +20,6 @@ GIT
       typhoeus
       zorki
 
-GIT
-  remote: https://github.com/Fact-Check-Insights/zorki
-  revision: 61e07ca7fcc8486b22424d54cb4199ba6db50f02
-  specs:
-    zorki (0.2.11)
-      apparition
-      capybara
-      oj
-      selenium-webdriver (~> 4.40.0)
-      typhoeus
-
 PATH
   remote: vendor/birdsong
   specs:
@@ -53,6 +42,16 @@ PATH
       selenium-devtools
       selenium-webdriver
       terrapin
+      typhoeus
+
+PATH
+  remote: vendor/zorki
+  specs:
+    zorki (0.3.0)
+      apparition
+      capybara
+      oj
+      selenium-webdriver (~> 4.40.0)
       typhoeus
 
 GEM

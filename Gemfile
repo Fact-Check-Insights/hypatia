@@ -76,8 +76,9 @@ gem "selenium-webdriver", ">= 4.32.0"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # The whole point of this app
-gem "zorki", git: "https://github.com/Fact-Check-Insights/zorki"
+# gem "zorki", git: "https://github.com/Fact-Check-Insights/zorki"
 # gem "zorki", path: "/Users/christopher/Repositories/zorki"
+gem "zorki", path: "vendor/zorki"
 gem "forki", git: "https://github.com/Fact-Check-Insights/forki", branch: "main"
 # gem "forki", "0.2.9", path: "/Users/christopher/Repositories/Reporters_Lab/forki"
 gem "youtubearchiver", git: "https://github.com/Fact-Check-Insights/YoutubeArchiver"
